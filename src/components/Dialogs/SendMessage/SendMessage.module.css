@@ -1,0 +1,6 @@
+.sendMessage{
+    grid-area: sendMessageField;
+    padding:1em;
+    margin:4px;
+    border: solid 1px  rgba(192, 192, 192, 0.5) ;    
+}

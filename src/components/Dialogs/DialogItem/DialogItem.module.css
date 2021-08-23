@@ -1,0 +1,17 @@
+
+
+
+
+ .dialog{
+    grid-area: dialog;
+}
+ 
+ .dialog a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+
+.dialog a.active{
+    color:gold;
+}

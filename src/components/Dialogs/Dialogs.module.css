@@ -1,0 +1,34 @@
+
+.dialogs{
+    display: grid;
+    grid-template-areas: 
+    "dialog message"
+    "void sendMessageField";
+    grid-template-columns: 2fr 10fr;
+    grid-template-rows: 10fr 2fr; 
+}
+
+.void{
+    padding:1em;
+}
+
+.dialogsItems {
+    padding:1em;
+    margin: 5px;
+    border:solid 2px rgba(192, 192, 192, 0.5)
+}
+
+.messages{
+    padding: 1em;
+    margin: 5px;
+    border:solid 2px rgba(192, 192, 192, 0.5)
+}
+
+
+/* 
+grid-template-areas: 
+"header header"
+"navBar mainContent";
+grid-template-columns: 1fr 5fr;
+grid-template-rows: 10ch 1fr; 
+*/

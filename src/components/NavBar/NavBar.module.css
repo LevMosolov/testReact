@@ -1,0 +1,16 @@
+.nav{
+    grid-area: navBar;
+    background-color: #456270;
+  }
+
+   .nav a{
+    color: whitesmoke;
+    text-decoration: none;
+  }
+
+   .nav a.activeLink{
+    color:rgb(255, 136, 0);  
+  } 
+
+
+ 

@@ -1,0 +1,8 @@
+.all{
+    background-color: #324553;
+    grid-area: all;
+}
+
+.title{
+    font-size: small;
+}

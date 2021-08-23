@@ -1,0 +1,6 @@
+.courses{
+    
+    grid-area: currentCourses;
+    background-color: #456270;
+    color:white;
+  }

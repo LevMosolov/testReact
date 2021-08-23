@@ -1,0 +1,20 @@
+.wrapper{  
+  color:whitesmoke;
+  background-color: #324553;
+  display: grid;
+  grid-template-areas: 
+  "header header"
+  "navBar mainContent";
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 10ch 1fr;
+   column-gap:1em;
+   row-gap: 1em;
+  
+}
+
+.wrapperMainContent{
+  background-color: #456270;
+    grid-area: mainContent;
+}
+
+
