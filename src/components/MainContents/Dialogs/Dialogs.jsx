@@ -23,7 +23,7 @@ const Dialogs = (props) => {
             </div>
             <div className={style.void}>WNT</div>
             <div className={style.sendMessage}>
-                <SendMessageContainer state ={props}/>               
+                <SendMessageContainer />               
             </div>
         </div>
     )

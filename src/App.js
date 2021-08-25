@@ -6,7 +6,8 @@ import MainContent from './components/MainContents/MainContent';
 import { Route } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 import SkillsMain from './components/Skills/SkillsMain';
-import DialogsContainer from './components/Dialogs/DialogsContainer';
+import DialogsContainer from './components/MainContents/Dialogs/DialogsContainer';
+import Friends from './components/MainContents/Friends/Friends';
  
 
 const App = () => {  
@@ -19,6 +20,7 @@ const App = () => {
           <Route path='/home' render={()=><MainContent/>} />
           <Route path='/dialogs' render={()=><DialogsContainer/>}/>
           <Route path='/skills' render={()=><SkillsMain/>} />
+          <Route path='/friends' render={()=><Friends/>}/>
         </div>
       </div>
     </BrowserRouter>

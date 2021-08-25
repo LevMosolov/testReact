@@ -1,0 +1,8 @@
+.friends{
+    display: grid;
+    grid-template-areas: 
+    "dialog message";
+    
+    grid-template-rows: 5fr 5fr; 
+}
+
