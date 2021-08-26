@@ -30,9 +30,6 @@ const SendMessageContainer = connect(mapStateToProps, mapDispatchToProps)(SendMe
 
 
 
-
-
-
 export default SendMessageContainer
 
 

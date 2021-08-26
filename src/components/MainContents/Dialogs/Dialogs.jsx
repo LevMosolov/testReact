@@ -9,6 +9,7 @@ import SendMessageContainer from './SendMessage/SendMessageContainer'
 
 
 const Dialogs = (props) => {
+    debugger
     let dialogsElements = props.dialogsData.map((dialog)=><DialogItem name={dialog.name} key={dialog.id} id={dialog.id}></DialogItem>)
     let messagesElements = props.messagesData.map((messageEl)=><Message message={messageEl.message} key={messageEl.id}></Message>)
 
