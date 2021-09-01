@@ -7,7 +7,6 @@ import { Route } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 import SkillsMain from './components/Skills/SkillsMain';
 import DialogsContainer from './components/MainContents/Dialogs/DialogsContainer';
-import Friends from './components/MainContents/Friends/Friends';
 import FriendsContainer from './components/MainContents/Friends/FriendsContainer';
  
 

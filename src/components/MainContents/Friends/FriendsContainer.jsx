@@ -1,7 +1,7 @@
 import React from 'react'
 import Friends from './Friends'
 import { connect } from 'react-redux'
-import { followAC, unfollowAC, setUsersAC } from '../../redux/friendsReducer'
+import { followAC, unfollowAC, setUsersAC} from '../../redux/friendsReducer'
 
 
 let mapStateToProps = (state)=>{    
@@ -20,16 +20,11 @@ let mapDispatchToProps = (dispatch) => {
         },
         setUsers:(users)=>{
             dispatch(setUsersAC(users))
-        }       
+        }
     }
 }
 
-// export const isIFollower=(followergArr)=>{
-//     for ( let id of followergArr){
-//         if(id === 1) return true         
-//     }
-//     return false
-// }
+
 
 const FriendsContainer = connect(mapStateToProps, mapDispatchToProps)(Friends)
 

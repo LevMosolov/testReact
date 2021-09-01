@@ -1,7 +1,8 @@
-import imgAva from '../MainContents/Friends/FriendMiniAvatar/PinguiLogo9.png'
+
 let FOLLOW = 'FOLLOW'
 let UNFOLLOW = 'UNFOLLOW'
 let SET_USERS='SET_USERS'
+
 
 
 let inicialState = {
@@ -9,11 +10,11 @@ let inicialState = {
     //following - who I follow(or these are the ones the user follow)
     users:
     [
-        {id:1, name:'Lev', surname: 'Mosolov', photoUrl:imgAva, followers:[2,5],following:[2,5]},
-        {id:2, name:'Polina', surname: 'Burnashevskaya', photoUrl:imgAva, followers:[1],following:[1]},
-        {id:3, name:'Ilon', surname: 'Mask', photoUrl:imgAva, followers:[5,4],following:[2,5]},
-        {id:4, name:'Michael', surname:'Jordan', photoUrl:imgAva, followers:[5], following:[1,3]},
-        {id:5, name:'Leonardo', surname: 'Dicaprio', photoUrl:imgAva, followers:[1,2], following:[4,3]}
+        // { id: 1, name: 'Lev', surname: 'Mosolov', photoUrl: 'https://twitchgid.ru/wp-content/uploads/2020/11/avi-11.jpeg', followers: [2, 5], following: [2, 5], followNow: true },
+        //     { id: 2, name: 'Polina', surname: 'Burnashevskaya', photoUrl: 'https://twitchgid.ru/wp-content/uploads/2020/11/avi-11.jpeg', followers: [1], following: [1], followNow: false },
+        //     { id: 3, name: 'Ilon', surname: 'Mask', photoUrl: 'https://twitchgid.ru/wp-content/uploads/2020/11/avi-11.jpeg', followers: [5, 4], following: [2, 5], followNow: false },
+        //     { id: 4, name: 'Michael', surname: 'Jordan', photoUrl: 'https://twitchgid.ru/wp-content/uploads/2020/11/avi-11.jpeg', followers: [5], following: [1, 3], followNow: false },
+        //     { id: 5, name: 'Leonardo', surname: 'Dicaprio', photoUrl: 'https://twitchgid.ru/wp-content/uploads/2020/11/avi-11.jpeg', followers: [1, 2], following: [4, 3], followNow: false }       
     ]   
 }
 
@@ -23,34 +24,48 @@ export const friendsReducer = (state=inicialState,action)=>{
         case FOLLOW:            
             return {
                 ...state, 
-                usres: state.users.map(u => {
+                users: state.users.map(u => {
                     if (u.id === action.userId) {
-                        for (let uFollowingId of u.following) {
-                            if (1 !== uFollowingId) {  //NEED REFACTORING
-                                return {
-                                    ...u,
-                                    ...u.following.push(1)                                     
-                                }
-                            } 
+                        console.log(`followNow ${u.followNow} then must be true`)
+                        return {
+                            ...u,                            
+                            followed: true
                         }
-                    }                    
+                        // for (let uFollowingId of u.following) {
+                        //     console.log('ups2')
+                        //     if (1 === uFollowingId) {  //NEED REFACTORING
+                        //         console.log('followNow: true')
+                        //         return {
+                        //             ...u,
+                        //            // ...u.following.push(1) ,  need refactoring
+                        //             followNow: true                                    
+                        //         }
+                        //     }
+                        // }
+                    }     return u       
                 })
             }            
 
         case UNFOLLOW:
             return {
                 ...state, 
-                usres: state.users.map(u => {
+                users: state.users.map(u => {
                     if (u.id === action.userId) {
-                        for (let i=0; i<u.following.length; i++) {
-                            if (1 === u.following[i]) {  //NEED REFACTORING
-                                return {
-                                    ...u,
-                                    ...u.following.splice(i, 1)                                        
-                                }
-                            } 
+                        return {
+                            ...u,                           
+                            followed: false
                         }
-                    }                    
+                        // for (let i=0; i<u.following.length; i++) {
+                        //     if (1 !== u.following[i]) {  //NEED REFACTORING
+                        //         console.log('followNow: false')
+                        //         return {
+                        //             ...u,
+                        //             //...u.following.splice(i, 1), need refactoring
+                        //             followNow: false                                       
+                        //         }
+                        //     } 
+                        // }
+                    }     return u                 
                 })
             }        
             
@@ -68,14 +83,14 @@ export const friendsReducer = (state=inicialState,action)=>{
 export const followAC=(userId)=>{
     return{
         type:FOLLOW,
-        userId:userId
+        userId
     }
 }
 
 export const unfollowAC=(userId)=>{
     return{
         type:UNFOLLOW,
-        userId:userId
+        userId
     }
 }
 
@@ -85,6 +100,8 @@ export const setUsersAC=(users)=>{
         users
     }
 }
+
+
 
 
 
