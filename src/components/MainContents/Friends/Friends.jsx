@@ -4,32 +4,25 @@ import * as axios from 'axios'
 
 
 
-let Friends = (props)=>{
+class Friends extends React.Component{
 
-    
-    if(props.users.length===0){     
-        axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response=>{
-            
-            props.setUsers(response.data.items)
+    constructor(props){
+        super(props)
+
+        axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
+
+            this.props.setUsers(response.data.items)
+            debugger
         })
-    }   
-    //     props.setUsers(
-    //         [ { id: 1, name: 'Lev', surname: 'Mosolov', photoUrl: imgAva, followers: [2, 5], following: [2, 5], followNow: true },
-    //         { id: 2, name: 'Polina', surname: 'Burnashevskaya', photoUrl: imgAva, followers: [1], following: [1], followNow: false },
-    //         { id: 3, name: 'Ilon', surname: 'Mask', photoUrl: imgAva, followers: [5, 4], following: [2, 5], followNow: false },
-    //         { id: 4, name: 'Michael', surname: 'Jordan', photoUrl: imgAva, followers: [5], following: [1, 3], followNow: false },
-    //         { id: 5, name: 'Leonardo', surname: 'Dicaprio', photoUrl: imgAva, followers: [1, 2], following: [4, 3], followNow: false }
         
-    //            ]
-    //     )
-    // }
+    }
     
-    
-    
-    
-    return <div className={style.friends}>
+
+
+    render(){
+        return <div className={style.friends}>
         {
-             props.users.map(u=><div key={u.id}>
+             this.props.users.map(u=><div key={u.id}>
                  <span>
                     <div>
                         <img src='https://twitchgid.ru/wp-content/uploads/2020/11/avi-11.jpeg' width='100px' height='100px'/>
@@ -37,11 +30,9 @@ let Friends = (props)=>{
                     <div>
                         {                            
                             !u.followed 
-                            ?<button onClick={()=>{props.follow(u.id)}}>Unfollow now</button>
-                            :<button onClick={()=>{props.unfollow(u.id)}}>Follow now</button>
-                        }
-                        
-
+                            ?<button onClick={()=>{this.props.follow(u.id)}}>Unfollow now</button>
+                            :<button onClick={()=>{this.props.unfollow(u.id)}}>Follow now</button>
+                        }                
                     </div>
                  </span>
                  <span>                   
@@ -53,7 +44,9 @@ let Friends = (props)=>{
            
         }
     </div>
-    
+    }
+
 }
+
 
 export default Friends

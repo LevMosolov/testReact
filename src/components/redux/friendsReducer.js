@@ -5,17 +5,9 @@ let SET_USERS='SET_USERS'
 
 
 
-let inicialState = {
-    //followers - who follow me(or follow some user about talk)
-    //following - who I follow(or these are the ones the user follow)
+let inicialState = {    
     users:
-    [
-        // { id: 1, name: 'Lev', surname: 'Mosolov', photoUrl: 'https://twitchgid.ru/wp-content/uploads/2020/11/avi-11.jpeg', followers: [2, 5], following: [2, 5], followNow: true },
-        //     { id: 2, name: 'Polina', surname: 'Burnashevskaya', photoUrl: 'https://twitchgid.ru/wp-content/uploads/2020/11/avi-11.jpeg', followers: [1], following: [1], followNow: false },
-        //     { id: 3, name: 'Ilon', surname: 'Mask', photoUrl: 'https://twitchgid.ru/wp-content/uploads/2020/11/avi-11.jpeg', followers: [5, 4], following: [2, 5], followNow: false },
-        //     { id: 4, name: 'Michael', surname: 'Jordan', photoUrl: 'https://twitchgid.ru/wp-content/uploads/2020/11/avi-11.jpeg', followers: [5], following: [1, 3], followNow: false },
-        //     { id: 5, name: 'Leonardo', surname: 'Dicaprio', photoUrl: 'https://twitchgid.ru/wp-content/uploads/2020/11/avi-11.jpeg', followers: [1, 2], following: [4, 3], followNow: false }       
-    ]   
+    []   
 }
 
 //Is I user's follower
