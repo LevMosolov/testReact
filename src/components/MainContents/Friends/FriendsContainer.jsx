@@ -6,7 +6,10 @@ import { followAC, unfollowAC, setUsersAC} from '../../redux/friendsReducer'
 
 let mapStateToProps = (state)=>{    
     return {        
-        users:state.friends.users
+        users:state.friends.users,
+        pageSize:state.friends.pageSize,
+        totalFriendsCount:state.friends.totalFriendsCount,
+        currentPage:state.friends.currentPage
     }
 }
 

@@ -6,8 +6,10 @@ let SET_USERS='SET_USERS'
 
 
 let inicialState = {    
-    users:
-    []   
+    users:[] ,
+    pageSize:4,
+    totalFriendsCount:0  ,
+    currentPage:1
 }
 
 //Is I user's follower
