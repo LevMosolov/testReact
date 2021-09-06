@@ -2,14 +2,19 @@
 let FOLLOW = 'FOLLOW'
 let UNFOLLOW = 'UNFOLLOW'
 let SET_USERS='SET_USERS'
+let SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'
+let SET_TOTAL_FRIENDS_COUNT='SET_TOTAL_FRIENDS_COUNT'
+let TOGGLE_IS_FETCHING='TOGGLE_IS_FETCHING'
+
 
 
 
 let inicialState = {    
     users:[] ,
     pageSize:4,
-    totalFriendsCount:0  ,
-    currentPage:1
+    totalFriendsCount:19  ,
+    currentPage:2,
+    isFetching:true
 }
 
 //Is I user's follower
@@ -61,41 +66,76 @@ export const friendsReducer = (state=inicialState,action)=>{
                         // }
                     }     return u                 
                 })
-            }        
-            
-        case SET_USERS:
-            return{
-                ...state,
-                users:[...state.users, ...action.users] //combine two arrays
             }
-        
+
+        case SET_USERS:
+            return {
+                ...state,
+                users:action.users 
+            }
+        case SET_CURRENT_PAGE:
+            return {
+                ...state,
+                currentPage:action.currentPage
+            }
+            case SET_TOTAL_FRIENDS_COUNT:
+                return{
+                    ...state,
+                    totalFriendsCount:action.totalCount
+
+                }
+
+            case TOGGLE_IS_FETCHING:
+                return{
+                    ...state,
+                    isFetching:action.isFetching
+                }
         default:
             return state
     }
 }
 
-export const followAC=(userId)=>{
+export const follow=(userId)=>{
     return{
         type:FOLLOW,
         userId
     }
 }
 
-export const unfollowAC=(userId)=>{
+export const unfollow=(userId)=>{
     return{
         type:UNFOLLOW,
         userId
     }
 }
 
-export const setUsersAC=(users)=>{
+export const setUsers=(users)=>{
     return{
         type:SET_USERS,
         users
     }
 }
 
+export const setCurrentPage=(currentPage)=>{
+    return{
+        type:SET_CURRENT_PAGE,
+        currentPage
+    }
+}
 
+export const setTotalFriendsCount=(totalCount)=>{
+    return{
+        type:SET_TOTAL_FRIENDS_COUNT,
+        totalCount
+    }
+}
+
+export const setToggleIsFetchig=(isFetching)=>{
+    return{
+        type:TOGGLE_IS_FETCHING,
+        isFetching
+    }
+}
 
 
 

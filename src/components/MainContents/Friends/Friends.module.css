@@ -8,4 +8,14 @@
 
 .selectedPage{
     color:red;
+    font-size: 24px;
+
+}
+
+#mouseOnPageNumber:hover{
+    font-size: 24px;    
+}
+
+#friendsPageNumbers{
+    margin-top: 50px;
 }
